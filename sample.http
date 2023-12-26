@@ -1,0 +1,35 @@
+
+# キーの作成と登録
+POST http://localhost:9000/api/register
+
+###
+
+# 2要素認証シークレットの検証
+POST http://localhost:9000/api/verify
+Content-Type: application/json
+
+{
+  "userId": "312cdabc-078a-40d0-b254-08387127957a",
+  "token": "591221"
+}
+
+###
+
+# ユーザートークンの検証
+POST http://localhost:9000/api/validate
+Content-Type: application/json
+
+{
+  "userId": "312cdabc-078a-40d0-b254-08387127957a",
+  "token": "060430"
+}
+
+###
+
+# QRコード取得
+GET http://localhost:9000/
+Content-Type: application/json
+
+{
+  "userId": "312cdabc-078a-40d0-b254-08387127957a"
+}
